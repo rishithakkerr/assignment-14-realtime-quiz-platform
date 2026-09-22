@@ -4,6 +4,8 @@
 **Roll No:** 150096725068
 **Cohort:** Sam Altman
 
+**Deployed Link:** https://assignment-14-realtime-quiz-platform-v3nx.onrender.com/
+
 A Kahoot-style live multiplayer quiz built with **Node.js, Express, and Socket.io**. One host creates a room and gets a 4-digit PIN, players join with it, and the server runs the whole game authoritatively — questions, countdown, scoring, and anti-cheat all live server-side so a client can't fake a faster answer or a higher score.
 
 ## Features
