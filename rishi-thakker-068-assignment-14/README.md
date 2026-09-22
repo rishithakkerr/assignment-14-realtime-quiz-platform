@@ -14,24 +14,6 @@ A Kahoot-style live multiplayer quiz built with **Node.js, Express, and Socket.i
 - Live leaderboard after every round, final standings + winner at the end
 - Separate host dashboard and player answer-grid views
 
-## Setup
-
-```bash
-npm install
-npm run dev   # or npm start
-```
-
-- Host: open `http://localhost:5000/host.html`
-- Players: open `http://localhost:5000/player.html` (as many tabs/devices as you want)
-
-## Testing (from assignment spec)
-1. Start the server, open Host view in Tab 1 → **Create Quiz**, note the PIN.
-2. Open Player view in Tabs 2 and 3 → join as "Player 1" and "Player 2" with the PIN.
-3. From the host, click **Start Game**.
-4. Answer fast on Player 1; wait ~10s before answering on Player 2.
-5. Confirm Player 1 scores higher on the leaderboard due to the speed bonus.
-6. Confirm neither player can submit after the 15s timer runs out — the answer buttons disable client-side, and the server rejects it server-side either way.
-
 ## Implementation notes
 - **Question flow between rounds isn't ticking clients live during the pause** — after a round ends, the server waits 5 seconds (showing the correct answer + leaderboard) before auto-starting the next question. The spec's state machine implies this pause but doesn't name an event for it or specify its length, so this is a reasonable default, not a literal spec event.
 - **Category matching** on `quiz:create` falls back to the full question bank if no questions match the given category, so testing with any category string always works rather than silently returning zero questions.
